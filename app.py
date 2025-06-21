@@ -26,20 +26,6 @@ DB_URL = os.getenv("MONGO_CONNECTION_STRING")
 if not DB_URL:
     raise ValueError("MONGO_CONNECTION_STRING environment variable is not set.")
 
-# Import our flash loan tools
-from flash_loan_tools import (
-    create_flash_loan_strategy,
-    execute_flash_loan,
-    get_strategy_details,
-    validate_profitability,
-    estimate_gas_cost,
-    analyze_arbitrage_opportunity,
-    monitor_strategy_performance,
-    get_market_conditions,
-    check_flash_loan_availability,
-    get_uniswap_quote
-)
-
 # Initialize storage
 storage = MongoDbStorage(
     db_url=DB_URL,
@@ -63,16 +49,6 @@ def get_agent_for_session(session_id: Optional[str] = None, user_id: str = "user
         ),
         tools=[
             DuckDuckGoTools(),
-            create_flash_loan_strategy,
-            execute_flash_loan,
-            get_strategy_details,
-            validate_profitability,
-            estimate_gas_cost,
-            analyze_arbitrage_opportunity,
-            monitor_strategy_performance,
-            get_market_conditions,
-            check_flash_loan_availability,
-            get_uniswap_quote
         ],
         description="Flash Loan AI Agent - I can help you create, execute, and optimize flash loan strategies on DeFi protocols.",
         storage=storage,

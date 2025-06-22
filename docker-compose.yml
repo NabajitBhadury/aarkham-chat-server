@@ -1,7 +1,7 @@
 services:
   flash-loan-agent:
     build:
-      context: .
+      context: ./flash_loan_agent
       dockerfile: dockerfile
     container_name: flash-loan-agent
     ports:

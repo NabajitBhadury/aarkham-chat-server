@@ -1,7 +1,7 @@
 services:
   flash-loan-agent:
     build:
-      context: ./flash_loan_agent
+      context: ./aarkham-chat-server
       dockerfile: dockerfile
     container_name: flash-loan-agent
     ports:

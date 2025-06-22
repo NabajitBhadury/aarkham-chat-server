@@ -1,0 +1,17 @@
+# Development Docker Compose configuration
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  flash_loan_agent:
+    volumes:
+      # Mount source code for development (hot reload)
+      - .:/app:ro
+      - /app/.venv  # Exclude virtual environment from mount
+    environment:
+      - ENV=development
+      - DEBUG=true
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    
+  # Include MongoDB Express by default in development
+  mongo-express:
+    profiles: []  # Remove profiles to include by default

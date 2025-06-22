@@ -182,7 +182,7 @@ wheels = [
 ]
 
 [[package]]
-name = "aarkham-chat-server"
+name = "flash-loan-agen"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [

@@ -1,9 +1,9 @@
 services:
-  aarkham-chat-server:
+  flash-loan-agen:
     build:
-      context: ./aarkham-chat-server
+      context: ./flash-loan-agen
       dockerfile: dockerfile
-    container_name: aarkham-chat-server
+    container_name: flash-loan-agen
     ports:
       - "8000:8000"
     restart: unless-stopped 

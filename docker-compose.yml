@@ -1,0 +1,9 @@
+services:
+  flash-loan-agent:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: flash-loan-agent
+    ports:
+      - "8000:8000"
+    restart: unless-stopped 
